@@ -1,8 +1,8 @@
-package com.grglucastr.universeapi.controllers.v1;
+package com.grglucastr.universeapi.v1.controllers;
 
-import com.grglucastr.universeapi.dto.PlanetRequestDTO;
-import com.grglucastr.universeapi.models.Planet;
-import com.grglucastr.universeapi.repository.PlanetRepository;
+import com.grglucastr.universeapi.v1.dto.PlanetRequestDTO;
+import com.grglucastr.universeapi.v1.models.Planet;
+import com.grglucastr.universeapi.v1.repository.PlanetRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

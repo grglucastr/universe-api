@@ -1,4 +1,4 @@
-package com.grglucastr.universeapi.models;
+package com.grglucastr.universeapi.v1.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

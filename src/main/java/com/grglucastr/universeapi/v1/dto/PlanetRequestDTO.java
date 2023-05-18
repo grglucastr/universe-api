@@ -1,4 +1,4 @@
-package com.grglucastr.universeapi.dto;
+package com.grglucastr.universeapi.v1.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
