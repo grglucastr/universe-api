@@ -5,6 +5,7 @@ import com.grglucastr.universeapi.repository.PlanetRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,6 +45,16 @@ public class PlanetController {
     public ResponseEntity<Planet> getSinglePlanet(@PathVariable("id") Integer id){
         final Optional<Planet> planetFound = planetRepository.findById(id);
         return planetFound.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Planet> deletePlanet(@PathVariable("id") Integer id){
+        final Optional<Planet> planetFound = planetRepository.findById(id);
+        if(planetFound.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        planetFound.ifPresent(planetRepository::delete);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }
